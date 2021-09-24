@@ -17,10 +17,10 @@ def hejhej():
     else:
         text = request.form['text']
         random_string = uuid.uuid4().hex
-        path = "static/" + random_string + ".svg"
+        path = "app/static/" + random_string + ".svg"
         np_arr = float_string_to_np_arr(text) 
-        new_model = load('model2.joblib')
-        make_pic('sm_lgh_pris.csv', new_model, np_arr, path)
+        new_model = load('app/model2.joblib')
+        make_pic('app/sm_lgh_pris.csv', new_model, np_arr, path)
         return render_template('index.html', href=path)
 
 
