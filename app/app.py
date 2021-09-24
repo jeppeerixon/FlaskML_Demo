@@ -21,7 +21,7 @@ def hejhej():
         np_arr = float_string_to_np_arr(text) 
         new_model = load('app/model2.joblib')
         make_pic('app/sm_lgh_pris.csv', new_model, np_arr, path)
-        return render_template('index.html', href=path)
+        return render_template('index.html', href=path[4:])
 
 
 def make_pic(traning_data_filename, model, new_inp_np_arr, output_file):
